@@ -1,0 +1,50 @@
+{
+  "intro": {
+    "intro-title-1": "In Internet",
+    "intro-title-2": "cheaper"
+  },
+  "about": {
+    "about-text": "We have been dealing with windows for over 30 years and know our business. Our team of specialists will help you choose windows for your home and will not leave any questions. Working with us is fast and efficient 🔥",
+    "button": "To the calculator"
+  },
+  "benefits": {
+    "net": {
+      "title": "A mosquito net as a gift 🎁",
+      "subtitle":  "To get a promo code for a free mosquito net: 👇",
+      "rule-1": "1. Point your smartphone camera at the QR. 📸",
+      "rule-2": "2. Go to the Telegram bot using the specified link.",
+      "rule-3": "3. Take a positive selfie, as indicated in the example. 🤳",
+      "rule-4": "4. Post on Instagram.",
+      "rule-5": "5. Enter your phone number and receive a promotional code 😎"
+    },
+    "order-payment": {
+      "title": "Order and payment 💵",
+      "text-1": "Place an order online and ",
+      "text-2": "get an additional 3% discount 🤑"
+    },
+    "delivery": {
+      "title": "Delivery 🚚",
+      "text-1": "When ordering more than 2 windows - ",
+      "text-2": "the lift to the floor is free 😛"
+    }
+  },
+  "calc": {
+    "title": "Count yourself 📱",
+    "button": "What is this? 🦁",
+    "modal-title": "How it works? 🤔",
+    "modal-button": "Understood!"
+  },
+  "form": {
+    "title": "Call me back 🤙",
+    "text": "We will solve all your questions about windows, leave a request and we will call you back 😉",
+    "placeholderName": "Name",
+    "placeholderPhone": "Phone",
+    "button": "Send"
+  },
+  "footer": {
+    "text": "lorem10123asd as;ldkalksd;lk a;lsdkasdjnsdkbsndc sdhbfjbsdbvjshbd jhsbdjchbjhsbdc"
+  },
+  "notifications": {
+    "soonWeWillCall": "We will call you in a few minutes!"
+  }
+}
