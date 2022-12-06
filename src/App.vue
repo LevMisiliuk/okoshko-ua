@@ -10,6 +10,22 @@ export default {
 </script>
 
 <style lang="scss">
+:root {
+  --size: 300px;
+  --gap: 25px;
+  --duration: 90s;
+  --scroll-start: 0;
+  --scroll-end: calc(-100% - var(--gap));
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-text: #000;
+    --color-bg: radial-gradient(ellipse at bottom, #1b2735 0%, #090a0f 100%);
+    --color-bg-accent: #fff;
+  }
+}
+
 * {
   margin: 0;
   padding: 0;

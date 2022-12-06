@@ -13,12 +13,11 @@
         v-motion
         :initial="{ opacity: 0, y: -700, transition: { delay: 400 } }"
         :enter="{ opacity: 1, y: 0, transition: { delay: 750 } }"
-        class="benefits__item-img"
+        class="benefits__item-button"
       >
-        <img class="benefits__img" src="../assets/svg/qr-code-okoshko.svg" alt="qr">
         <a href="#calculator_frame">
           <button class="primary-button" v-motion v-motion-roll-left>
-            <span>Перейти в телеграм-бот</span>
+            <span>{{ $t('benefits.net.button') }}</span>
             <div class="wave"></div>
           </button>
         </a>
@@ -48,7 +47,7 @@
 export default {
   setup() {
     return {}
-  }
+  },
 }
 </script>
 
@@ -80,6 +79,11 @@ export default {
       font-size: 16px;
       line-height: 28px;
       padding: 0 8px;
+    }
+
+    &-button {
+      display: flex;
+      justify-content: flex-end;
     }
   }
 }

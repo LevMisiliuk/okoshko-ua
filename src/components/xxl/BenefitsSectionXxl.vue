@@ -15,7 +15,7 @@
         :enter="{opacity: 1, y: 0, transition: {delay: 750} }"
         class="benefits__item-img"
       >
-        <img class="benefits__img" src="../../assets/svg/qr-code-okoshko.svg" alt="qr">
+        <img class="benefits__img" src="../../assets/okoshko-qr.png" alt="qr code">
           <div class="benefits__item-flex">
             <div class="benefits__item-txt">{{ $t('benefits.net.subtitle') }}</div>
             <div>

@@ -15,7 +15,8 @@
       "rule-2": "2. Go to the Telegram bot using the specified link.",
       "rule-3": "3. Take a positive selfie, as indicated in the example. 🤳",
       "rule-4": "4. Post on Instagram.",
-      "rule-5": "5. Enter your phone number and receive a promotional code 😎"
+      "rule-5": "5. Enter your phone number and receive a promotional code 😎",
+      "button": "Go to telegram-bot"
     },
     "order-payment": {
       "title": "Order and payment 💵",

@@ -39,16 +39,19 @@
   <div v-if="loaderState" class="area-loader">
     <span class="loader loader-position"></span>
   </div>
+  <MarqueeLogoWall />
 </template>
 
 <script>
 import { ref } from 'vue'
-import { toast } from 'vue3-toastify'
-import 'vue3-toastify/dist/index.css'
-import i18n from '@/i18n'
+// import i18n from '@/i18n'x
+import MarqueeLogoWall from '../auxiliaryComponents/MarqueeLogoWall'
 
 export default {
   name: 'FormSectionXxl',
+  components: {
+    MarqueeLogoWall
+  },
   setup() {
     const loaderState = ref(null)
     const clientName = ref(null)
@@ -72,9 +75,9 @@ export default {
       if (clientPhone.value) errorPhone.value = false
       loaderState.value = true
       setTimeout(() => {
-        toast.success(
-          `${clientName.value} ${i18n.global.t('notifications.soonWeWillCall')}`
-        )
+        // toast.success(
+        //   `${clientName.value} ${i18n.global.t('notifications.soonWeWillCall')}`
+        // )
         loaderState.value = false
       }, 5000)
     }
