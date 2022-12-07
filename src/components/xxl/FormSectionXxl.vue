@@ -6,6 +6,11 @@
       <div class="circle"></div>
       <div class="form__inner-body">
         <h3 class="form__title">{{ $t('form.title') }}</h3>
+        <div class="form__checkmarks">
+          ✅ - Замір
+          ✅ - Консультація
+          ✅ - Інше
+        </div>
         <h4 class="form__subtitle">{{ $t('form.text') }}</h4>
         <input
           v-model="clientName"
@@ -96,6 +101,7 @@ export default {
 
 <style lang="scss" scoped>
 .form {
+  color: #000;
   &__inner {
     position: relative;
     max-width: 400px;
@@ -143,6 +149,13 @@ export default {
     margin-bottom: 20px;
     font-weight: 500;
     font-size: 18px;
+    color: #000;
+  }
+
+  &__checkmarks {
+    margin-bottom: 20px;
+    font-weight: 550;
+    font-size: 14px;
     color: #000;
   }
 }
