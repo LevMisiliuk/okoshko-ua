@@ -51,6 +51,9 @@
       <img src="../../assets/svg/instagram.svg" alt="instagram">
       <img src="../../assets/svg/facebook.svg" alt="facebook">
     </div>
+    <a class="footer-content__author">
+      Developed and Designed by Lev Misiliuk
+    </a>
   </div>
 </template>
 
@@ -92,6 +95,12 @@ export default {
   &__item {
     color: #000;
     margin-bottom: 16px;
+  }
+
+  &__author {
+    font-size: 12px;
+    color: #000;
+    margin-top: 16px;
   }
 
   &__img {

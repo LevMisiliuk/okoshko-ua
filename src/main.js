@@ -4,6 +4,9 @@ const Vue3Mq = require('vue3-mq');
 import { MotionPlugin } from '@vueuse/motion'
 import router from './router'
 import i18n from './i18n'
+import Toast from "vue-toastification";
+import "vue-toastification/dist/index.css";
+import VueSmoothScroll from 'vue3-smooth-scroll'
 
 router.beforeEach((to, from, next) => {
   const lang = to.params.lang;
@@ -28,6 +31,8 @@ app
   .use(MotionPlugin)
   .use(router)
   .use(i18n)
+  .use(Toast)
+  .use(VueSmoothScroll)
   .mount('#app')
 
 // Options

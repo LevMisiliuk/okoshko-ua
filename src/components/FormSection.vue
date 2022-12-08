@@ -6,16 +6,29 @@
       <div class="circle"></div>
       <div class="form__inner-body">
         <h3 class="form__title">{{ $t('form.title') }}</h3>
+        <div class="form__checkmarks">
+          ✅ - {{ $t('form.measurement') }}
+          ✅ - {{ $t('form.сonsultation') }}
+          ✅ - {{ $t('form.other') }}
+        </div>
         <h4 class="form__subtitle">{{ $t('form.text') }}</h4>
         <input
           v-model="clientName"
-          :class="errorName ? 'form__inner-body-input-error' : 'form__inner-body-input'"
+          :class="
+            errorName
+              ? 'form__inner-body-input-error'
+              : 'form__inner-body-input'
+          "
           type="text"
           :placeholder="$t('form.placeholderName')"
         />
         <input
           v-model="clientPhone"
-          :class="errorPhone ? 'form__inner-body-input-error' : 'form__inner-body-input'"
+          :class="
+            errorPhone
+              ? 'form__inner-body-input-error'
+              : 'form__inner-body-input'
+          "
           type="email"
           :placeholder="$t('form.placeholderPhone')"
         />
@@ -36,15 +49,17 @@
 
 <script>
 import { ref } from 'vue'
-// import i18n from '@/i18n'
-import MarqueeLogoWall from './auxiliaryComponents/MarqueeLogoWall.vue';
+import i18n from '@/i18n'
+import { useToast } from 'vue-toastification'
+import MarqueeLogoWall from './auxiliaryComponents/MarqueeLogoWall.vue'
 
 export default {
   name: 'FormSection',
   components: {
-    MarqueeLogoWall
+    MarqueeLogoWall,
   },
   setup() {
+    const toast = useToast()
     const loaderState = ref(null)
     const clientName = ref(null)
     const clientPhone = ref(null)
@@ -60,16 +75,18 @@ export default {
         errorName.value = true
         return
       } else if (!clientName.value && clientPhone.value) {
-         errorPhone.value = true
-         return
+        errorPhone.value = true
+        return
       }
       if (clientName.value) errorName.value = false
       if (clientPhone.value) errorPhone.value = false
       loaderState.value = true
       setTimeout(() => {
-        // toast.success(`${clientName.value} ${i18n.global.t('notifications.soonWeWillCall')}`)
-        // loaderState.value = false
-      }, 5000);
+        loaderState.value = false
+        toast.success(
+          `${clientName.value} ${i18n.global.t('notifications.soonWeWillCall')}`
+        )
+      }, 5000)
     }
     return {
       submitForm,
@@ -77,9 +94,9 @@ export default {
       clientName,
       clientPhone,
       errorName,
-      errorPhone
+      errorPhone,
     }
-  }
+  },
 }
 </script>
 
@@ -134,6 +151,13 @@ export default {
     margin-bottom: 20px;
     font-weight: 500;
     font-size: 18px;
+    color: #000;
+  }
+
+  &__checkmarks {
+    margin-bottom: 20px;
+    font-weight: 550;
+    font-size: 14px;
     color: #000;
   }
 }

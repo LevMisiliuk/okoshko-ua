@@ -7,9 +7,9 @@
       <div class="form__inner-body">
         <h3 class="form__title">{{ $t('form.title') }}</h3>
         <div class="form__checkmarks">
-          ✅ - Замір
-          ✅ - Консультація
-          ✅ - Інше
+          ✅ - {{ $t('form.measurement') }}
+          ✅ - {{ $t('form.сonsultation') }}
+          ✅ - {{ $t('form.other') }}
         </div>
         <h4 class="form__subtitle">{{ $t('form.text') }}</h4>
         <input
@@ -49,7 +49,8 @@
 
 <script>
 import { ref } from 'vue'
-// import i18n from '@/i18n'x
+import i18n from '@/i18n'
+import { useToast } from 'vue-toastification'
 import MarqueeLogoWall from '../auxiliaryComponents/MarqueeLogoWall'
 
 export default {
@@ -58,6 +59,7 @@ export default {
     MarqueeLogoWall
   },
   setup() {
+    const toast = useToast()
     const loaderState = ref(null)
     const clientName = ref(null)
     const clientPhone = ref(null)
@@ -80,10 +82,12 @@ export default {
       if (clientPhone.value) errorPhone.value = false
       loaderState.value = true
       setTimeout(() => {
-        // toast.success(
-        //   `${clientName.value} ${i18n.global.t('notifications.soonWeWillCall')}`
-        // )
+        toast.success(
+          `${clientName.value} ${i18n.global.t('notifications.soonWeWillCall')}`
+        )
         loaderState.value = false
+        clientName.value = ''
+        clientPhone.value = ''
       }, 5000)
     }
 

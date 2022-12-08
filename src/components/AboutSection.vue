@@ -9,7 +9,7 @@
     {{ $t('about.about-text') }}
     </p>
     <div class="about__botton-position">
-      <a href="#calculator_frame">
+      <a href="#calculator_frame" v-smooth-scroll>
         <button
           class="primary-button"
           v-motion
