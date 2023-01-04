@@ -15,10 +15,10 @@
         :enter="{opacity: 1, y: 0, transition: {delay: 750} }"
         class="benefits__item-img"
       >
-        <img class="benefits__img" src="../../assets/okoshko-qr.png" alt="qr code">
+        <img class="benefits__img" src="../../assets/okoshko-ua-qr.png" alt="qr code">
           <div class="benefits__item-flex">
             <div class="benefits__item-txt">{{ $t('benefits.net.subtitle') }}</div>
-            <div>
+            <div class="benefits__items-txt">
               <div class="benefits__item-txt">{{ $t('benefits.net.rule-1') }}</div>
               <div class="benefits__item-txt">{{ $t('benefits.net.rule-2') }}</div>
               <div class="benefits__item-txt">{{ $t('benefits.net.rule-3') }}</div>
@@ -76,6 +76,12 @@ export default {
     margin-right: 80px;
   }
 
+  &__items-txt {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
   &__item {
     margin-bottom: 40px;
 
@@ -101,7 +107,6 @@ export default {
     }
 
     &-flex {
-      height: 100%;
       display: flex;
       justify-content: space-between;
       flex-direction: column;

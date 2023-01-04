@@ -93,6 +93,7 @@ input {
   text-decoration: none;
   overflow: hidden;
   cursor: pointer;
+  border: 1px white solid;
 
   &:hover {
     .wave {

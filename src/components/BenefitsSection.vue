@@ -15,7 +15,7 @@
         :enter="{ opacity: 1, y: 0, transition: { delay: 750 } }"
         class="benefits__item-button"
       >
-        <a href="#calculator_frame">
+        <a href="https://t.me/Epocketcash_bot/?start=362">  
           <button class="primary-button" v-motion v-motion-roll-left>
             <span>{{ $t('benefits.net.button') }}</span>
             <div class="wave"></div>

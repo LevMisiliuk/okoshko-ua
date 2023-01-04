@@ -7,8 +7,8 @@
       <div class="form__inner-body">
         <h3 class="form__title">{{ $t('form.title') }}</h3>
         <div class="form__checkmarks">
-          ✅ - {{ $t('form.measurement') }}
-          ✅ - {{ $t('form.сonsultation') }}
+          ✅ - {{ $t('form.measurement') }}<br />
+          ✅ - {{ $t('form.сonsultation') }}<br />
           ✅ - {{ $t('form.other') }}
         </div>
         <h4 class="form__subtitle">{{ $t('form.text') }}</h4>
@@ -65,6 +65,7 @@ export default {
     const clientPhone = ref(null)
     const errorName = ref(null)
     const errorPhone = ref(null)
+    // const axios = require('axios');
 
     function submitForm() {
       if (!clientName.value && !clientPhone.value) {
@@ -83,8 +84,8 @@ export default {
       loaderState.value = true
       setTimeout(() => {
         loaderState.value = false
-        toast.success(
-          `${clientName.value} ${i18n.global.t('notifications.soonWeWillCall')}`
+        toast.warning(
+          `${clientName.value} ${i18n.global.t('notifications.warning')}`
         )
       }, 5000)
     }

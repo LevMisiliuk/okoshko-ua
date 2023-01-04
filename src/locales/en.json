@@ -49,6 +49,7 @@
     "text": "lorem10123asd as;ldkalksd;lk a;lsdkasdjnsdkbsndc sdhbfjbsdbvjshbd jhsbdjchbjhsbdc"
   },
   "notifications": {
-    "soonWeWillCall": "We will call you in a few minutes!"
+    "soonWeWillCall": "We will call you in a few minutes!",
+    "warning": "Something went wrong please try to call us +38(050)-342-94-60"
   }
 }

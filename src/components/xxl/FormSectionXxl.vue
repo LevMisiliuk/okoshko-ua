@@ -82,8 +82,8 @@ export default {
       if (clientPhone.value) errorPhone.value = false
       loaderState.value = true
       setTimeout(() => {
-        toast.success(
-          `${clientName.value} ${i18n.global.t('notifications.soonWeWillCall')}`
+        toast.warning(
+          `${clientName.value} ${i18n.global.t('notifications.warning')}`
         )
         loaderState.value = false
         clientName.value = ''
