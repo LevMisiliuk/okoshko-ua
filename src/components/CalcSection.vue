@@ -7,7 +7,7 @@
         id="calculator_frame"
         width="100%"
         height="100%"
-        style="border: none; min-height: 825px; border-radius: 30px;"
+        style="border: none; min-height: 620px; border-radius: 30px;"
         src="https://okoshko.ua/calculators/#/?autologin=69575b5cd56c63b0c21f2b64238d103c"
       ></iframe>
     </div>
