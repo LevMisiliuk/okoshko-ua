@@ -52,7 +52,7 @@
       <img src="../../assets/svg/facebook.svg" alt="facebook">
     </div>
     <a class="footer-content__author">
-      Developed and Designed by Lev Misiliuk
+      Developed and Designed by Lev Misiliuk 2023
     </a>
   </div>
 </template>

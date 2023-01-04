@@ -7,6 +7,7 @@ import i18n from './i18n'
 import Toast from "vue-toastification";
 import "vue-toastification/dist/index.css";
 import VueSmoothScroll from 'vue3-smooth-scroll'
+import VueGtag from "vue-gtag";
 
 router.beforeEach((to, from, next) => {
   const lang = to.params.lang;
@@ -30,6 +31,10 @@ app
   .component('MqResponsive', Vue3Mq.MqResponsive)
   .use(MotionPlugin)
   .use(router)
+  .use(VueGtag, {
+    appName: 'okoshko.ua',
+    config: { id: "G-5Y755Z2J8D" }
+  })
   .use(i18n)
   .use(Toast)
   .use(VueSmoothScroll)
