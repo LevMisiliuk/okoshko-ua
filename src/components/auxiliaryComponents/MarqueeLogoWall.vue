@@ -50,7 +50,7 @@ export default {
   display: flex;
   overflow: hidden;
   user-select: none;
-  gap: var(--gap);
+  gap: 25px;
   mask-image: linear-gradient(
     var(--mask-direction, to right),
     #{'hsl(0 0% 0% / 0)'},
@@ -65,9 +65,9 @@ export default {
   display: flex;
   align-items: center;
   justify-content: space-around;
-  gap: var(--gap);
+  gap: 25px;
   min-width: 100%;
-  animation: scroll-x var(--duration) linear infinite;
+  animation: scroll-x 90s linear infinite;
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -96,19 +96,19 @@ export default {
 
 @keyframes scroll-x {
   from {
-    transform: translateX(var(--scroll-start));
+    transform: translateX(0);
   }
   to {
-    transform: translateX(var(--scroll-end));
+    transform: translateX(calc(-100% - 25px));
   }
 }
 
 @keyframes scroll-y {
   from {
-    transform: translateY(var(--scroll-start));
+    transform: translateY(0);
   }
   to {
-    transform: translateY(var(--scroll-end));
+    transform: translateY(calc(-100% - 25px));
   }
 }
 
@@ -116,11 +116,11 @@ export default {
 .marquee svg, img {
   display: grid;
   place-items: center;
-  width: var(--size);
-  fill: var(--color-text);
-  background: var(--color-bg-accent);
+  width: 300px;
+  fill: #000;
+  background: #fff;
   aspect-ratio: 16/9;
-  padding: calc(var(--size) / 10);
+  padding: calc(300px / 10);
   border-radius: 0.5rem;
 }
 
@@ -128,7 +128,7 @@ export default {
 .wrapper {
   display: flex;
   flex-direction: column;
-  gap: var(--gap);
+  gap: 25px;
   margin: auto;
   max-width: 100vw;
 }
