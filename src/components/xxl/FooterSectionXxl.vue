@@ -51,7 +51,7 @@
       <a class="footer-content__socials-icon" target="_blank" href="https://www.instagram.com/okoshko2018/?igshid=MDM4ZDc5MmU%3D">
         <img src="../../assets/svg/instagram.svg" alt="instagram">
       </a>
-      <a target="_blank" href="https://www.youtube.com/@easypocketcash5204">
+      <a target="_blank" href="https://www.youtube.com/playlist?list=PLoSjKiHKyc1OvksF2Z1yv943NE44LPP_h">
         <img src="../../assets/svg/youtube.svg" alt="youtube">
       </a>
     </div>
