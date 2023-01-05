@@ -3,33 +3,33 @@
     <article class="wrapper">
       <div class="marquee">
         <div class="marquee__group">
-          <img class="" src="../../assets/svg/guardian.svg" alt="">
-          <img class="" src="../../assets/svg/maco.svg" alt="">
-          <img class="" src="../../assets/svg/rehau.svg" alt="">
-          <img class="" src="../../assets/svg/veka.svg" alt="">
+          <img src="../../assets/svg/guardian.svg" alt="">
+          <img src="../../assets/svg/maco.svg" alt="">
+          <img src="../../assets/svg/rehau.svg" alt="">
+          <img src="../../assets/svg/veka.svg" alt="">
         </div>
 
         <div aria-hidden="true" class="marquee__group">
-          <img class="" src="../../assets/svg/guardian.svg" alt="">
-          <img class="" src="../../assets/svg/maco.svg" alt="">
-          <img class="" src="../../assets/svg/rehau.svg" alt="">
-          <img class="" src="../../assets/svg/veka.svg" alt="">
+          <img src="../../assets/svg/guardian.svg" alt="">
+          <img src="../../assets/svg/maco.svg" alt="">
+          <img src="../../assets/svg/rehau.svg" alt="">
+          <img src="../../assets/svg/veka.svg" alt="">
         </div>
       </div>
 
       <div class="marquee marquee--reverse">
         <div class="marquee__group">
-          <img class="" src="../../assets/svg/roto.svg" alt="">
-          <img class="" src="../../assets/svg/wds.svg" alt="">
-          <img class="" src="../../assets/svg/axor.svg" alt="">
-          <img class="" src="../../assets/svg/aluplast.svg" alt="">
+          <img src="../../assets/svg/roto.svg" alt="">
+          <img src="../../assets/svg/wds.svg" alt="">
+          <img src="../../assets/svg/axor.svg" alt="">
+          <img src="../../assets/svg/aluplast.svg" alt="">
         </div>
 
         <div aria-hidden="true" class="marquee__group">
-          <img class="" src="../../assets/svg/roto.svg" alt="">
-          <img class="" src="../../assets/svg/wds.svg" alt="">
-          <img class="" src="../../assets/svg/axor.svg" alt="">
-          <img class="" src="../../assets/svg/aluplast.svg" alt="">
+          <img src="../../assets/svg/roto.svg" alt="">
+          <img src="../../assets/svg/wds.svg" alt="">
+          <img src="../../assets/svg/axor.svg" alt="">
+          <img src="../../assets/svg/aluplast.svg" alt="">
         </div>
       </div>
     </article>
@@ -68,6 +68,12 @@ export default {
   gap: 25px;
   min-width: 100%;
   animation: scroll-x 90s linear infinite;
+
+  @media only screen and (max-width: 600px) {
+    img {
+      width: 220px;
+    }
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {
