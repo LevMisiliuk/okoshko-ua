@@ -3,6 +3,7 @@
     <h2 class="calc__title">{{ $t('calc.title') }}</h2>
     <div class="calc__application" ref="calcApp">
       <iframe
+        title="calculator application"
         allow="autoplay"
         id="calculator_frame"
         width="100%"

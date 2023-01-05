@@ -48,10 +48,12 @@
     </a>
     <img class="footer-content__img" src="../../assets/logo-with-tagline.png" alt="logo with tagline">
     <div class="footer-content__socials">
-      <img src="../../assets/svg/instagram.svg" alt="instagram">
+      <a target="_blank" href="https://www.instagram.com/okoshko2018/?igshid=MDM4ZDc5MmU%3D">
+        <img src="../../assets/svg/instagram.svg" alt="instagram">
+      </a>
       <img src="../../assets/svg/facebook.svg" alt="facebook">
     </div>
-    <a class="footer-content__author">
+    <a href="https://www.linkedin.com/in/lev-misiliuk/" target="_blank" class="footer-content__author">
       Developed and Designed by Lev Misiliuk 2023
     </a>
   </div>

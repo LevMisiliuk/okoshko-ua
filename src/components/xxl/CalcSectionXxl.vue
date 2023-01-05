@@ -4,6 +4,7 @@
     <div class="calc__application-position">
       <div class="calc__application">
         <iframe
+          title="calculator application"
           allow="autoplay"
           id="calculator_frame"
           width="100%"

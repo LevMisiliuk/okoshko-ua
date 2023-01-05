@@ -59,13 +59,13 @@ export default {
     MarqueeLogoWall,
   },
   setup() {
+    const axios = require('axios');
     const toast = useToast()
     const loaderState = ref(null)
     const clientName = ref(null)
     const clientPhone = ref(null)
     const errorName = ref(null)
     const errorPhone = ref(null)
-    // const axios = require('axios');
 
     function submitForm() {
       if (!clientName.value && !clientPhone.value) {
@@ -82,12 +82,25 @@ export default {
       if (clientName.value) errorName.value = false
       if (clientPhone.value) errorPhone.value = false
       loaderState.value = true
-      setTimeout(() => {
-        loaderState.value = false
+      axios.post('https://okoshko.ua/api/callback', {
+        name: clientName.value,
+        phone: clientPhone.value
+      })
+      .then(function (response) {
+        console.log(response, 'response')
+        toast.success(
+          `${clientName.value} ${i18n.global.t('notifications.soonWeWillCall')}`
+        )
+      })
+      .catch(function (error) {
+        console.log(error)
         toast.warning(
           `${clientName.value} ${i18n.global.t('notifications.warning')}`
         )
-      }, 5000)
+      });
+      loaderState.value = false
+      clientName.value = ''
+      clientPhone.value = ''
     }
     return {
       submitForm,

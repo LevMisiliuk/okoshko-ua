@@ -21,7 +21,7 @@ body {
   padding: 0;
   overflow-x: hidden;
   background: radial-gradient(ellipse at bottom, #1b2735 0%, #090a0f 100%);
-  font-family: Lato, Arial, sans-serif;
+  font-family: 'Questrial', sans-serif;
   color: #fff;
   scroll-behavior: smooth;
 }
