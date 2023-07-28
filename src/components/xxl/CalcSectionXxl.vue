@@ -9,8 +9,8 @@
           id="calculator_frame"
           width="100%"
           height="100%"
-          style="border: none; min-height: 770px; border-radius: 30px"
-          src="https://okoshko.ua/calculators/#/?autologin=69575b5cd56c63b0c21f2b64238d103c"
+          style="border: none; height: 880px; border-radius: 30px;"
+          src="https://okoshko.ua/dark-calc/#/"
         ></iframe>
       </div>
     </div>

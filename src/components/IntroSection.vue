@@ -68,6 +68,7 @@ export default {
   width: 100%;
 
   &__title {
+    width: 100%;
     position: absolute;
     top: 50%;
     left: 50%;
@@ -77,7 +78,7 @@ export default {
     text-transform: uppercase;
     letter-spacing: 6px;
     border: 1px solid #fff;
-    padding: 8px 18px;
+    padding: 8px 40px;
   }
 }
 </style>

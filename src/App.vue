@@ -96,7 +96,7 @@ input {
 .wave {
   width: 200px;
   height: 200px;
-  background-color: #444857;
+  background-color: #20695d;
   box-shadow: inset 0 0 50px rgba(0, 0, 0, 0.5);
   position: absolute;
   left: 0;

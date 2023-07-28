@@ -1,10 +1,16 @@
 <template>
-<MqResponsive class="container-xs" :target="['xs', 'sm', 'md', 'lg', 'xl']">
-    <IntroSection />
-    <AboutSection />
-    <BenefitsSection />
-    <CalcSection />
-    <FormSection />
+  <MqResponsive :target="['xs', 'sm', 'md', 'lg', 'xl']">
+    <div class="container-xs">
+      <IntroSection />
+      <AboutSection />
+      <BenefitsSection />
+    </div>
+    <div  style="padding: 5px;">
+      <CalcSection />
+    </div>
+    <div class="container-xs">
+      <FormSection />
+    </div>
   </MqResponsive>
   <MqResponsive class="container-xxl" target="xxl">
     <IntroSectionXxl />
@@ -53,15 +59,19 @@ export default {
   },
   setup() {
     onMounted(() => {
+      if (localStorage.getItem('dark-calc')) {
+        updateBreakpoints({
+          preset: 'bootstrap5'
+        })
+        return
+      }
+      localStorage.setItem('dark-calc', 'yes')
       updateBreakpoints({
         preset: 'bootstrap5'
       })
     })
-    return {}
+    return {
+    }
   }
 }
 </script>
-
-<style lang="scss" scoped>
-
-</style>

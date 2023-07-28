@@ -60,9 +60,17 @@ export default {
     }
 
     function selectOption(option) {
+      if (option.name === 'ENG') {
+        localStorage.setItem('dark-calc', 'no')
+        context.emit('select', option)
+        setLocale(option.value)
+        areOptionsVisible.value = false
+        return
+      }
       context.emit('select', option)
       setLocale(option.value)
       areOptionsVisible.value = false
+      localStorage.setItem('dark-calc', 'yes')
     }
 
     return {

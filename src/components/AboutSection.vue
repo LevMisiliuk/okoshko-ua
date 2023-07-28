@@ -3,8 +3,8 @@
     <p
       class="about__txt"
       v-motion
-      :initial="{opacity: 0, y: 700, transition: {delay: 350} }"
-      :enter="{opacity: 1, y: 0, transition: {delay: 500} }"
+      :initial="{opacity: 0, y: 700, transition: {delay: 50} }"
+      :enter="{opacity: 1, y: 0, transition: {delay: 50} }"
     >
     {{ $t('about.about-text') }}
     </p>

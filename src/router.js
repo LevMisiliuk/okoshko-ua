@@ -1,5 +1,6 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import MainComponent from './components/MainComponent'
+import OrdersComponent from './components/OrdersComponent'
 
 export default createRouter({
   history: createWebHistory(),
@@ -7,9 +8,10 @@ export default createRouter({
     {
       path: '/:lang',
       children: [
-        { path: '', component: MainComponent }
+        { path: '', component: MainComponent },
       ]
-    }
+    },
+    { path: '/orders', component: OrdersComponent }
   ],
   scrollBehavior (to) {
     if (to.hash) {

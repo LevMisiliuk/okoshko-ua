@@ -5,7 +5,8 @@
       <div class="form-right-decoration"></div>
       <div class="circle"></div>
       <div class="form__inner-body">
-        <h3 class="form__title">{{ $t('form.title') }}</h3>
+        <h3 class="form__title_sm">{{ $t('form.title') }}</h3>
+        <h2 class="form__title">{{ $t('form.title2') }}</h2>
         <div class="form__checkmarks">
           ✅ - {{ $t('form.measurement') }}<br />
           ✅ - {{ $t('form.сonsultation') }}<br />
@@ -158,6 +159,13 @@ export default {
     font-weight: 500;
     font-size: 24px;
     color: #000;
+
+    &_sm {
+      margin-bottom: 0;
+      font-weight: 500;
+      font-size: 24px;
+      color: #000;
+    }
   }
 
   &__subtitle {

@@ -1,7 +1,7 @@
 {
   "intro": {
-    "intro-title-1": "In Internet",
-    "intro-title-2": "cheaper"
+    "intro-title-1": "Calculate window",
+    "intro-title-2": "in 4 steps"
   },
   "about": {
     "about-text": "We have been dealing with windows for over 30 years and know our business. Our team of specialists will help you choose windows for your home and will not leave any questions. Working with us is fast and efficient 🔥",
@@ -36,7 +36,8 @@
     "modal-button": "Understood!"
   },
   "form": {
-    "title": "Call me back 🤙",
+    "title": "Any questions? ",
+    "title2": "We will call back 🤙",
     "text": "We will solve all your questions about windows, leave a request and we will call you back 😉",
     "placeholderName": "Name",
     "placeholderPhone": "Phone",
