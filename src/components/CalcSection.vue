@@ -67,7 +67,7 @@ export default {
     const controller = new ScrollMagic.Controller();
     new ScrollMagic.Scene({
       triggerElement: '#my-element', // элемент, который запускает анимацию при прокрутке
-      duration: 600, // продолжительность анимации (в пикселях прокрутки)
+      duration: 1000, // продолжительность анимации (в пикселях прокрутки)
       triggerHook: 0, // срабатывание триггера на высоте 25% вьюпорта
     })
     .setPin('#my-element') // зафиксировать элемент на месте во время анимации

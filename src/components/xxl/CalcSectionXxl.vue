@@ -10,7 +10,7 @@
           width="100%"
           height="100%"
           style="border: none; height: 880px; border-radius: 30px;"
-          src="https://okoshko.ua/dark-calc/#/"
+          src="https://okoshko.ua/calculators/#/"
         ></iframe>
       </div>
     </div>
