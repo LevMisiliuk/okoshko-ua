@@ -1,6 +1,12 @@
 <template>
   <div class="header">
-    <img v-motion v-motion-roll-right class="logo" src="../assets/svg/logo.svg" alt="logo">
+    <img
+      v-motion
+      v-motion-roll-right
+      class="logo"
+      src="../assets/svg/logo.svg"
+      alt="logo"
+    />
     <LangSelect
       :options="options"
       @select="optionSelect"
@@ -8,14 +14,8 @@
     />
   </div>
 
-  <section
-    v-motion
-    v-motion-roll-left
-    class="intro"
-  >
-    <h1
-      class="intro__title"
-    >
+  <section v-motion v-motion-roll-left class="intro">
+    <h1 class="intro__title">
       {{ $t('intro.intro-title-1') }}<br />
       <span>{{ $t('intro.intro-title-2') }}</span>
     </h1>
@@ -28,20 +28,33 @@ import LangSelect from './auxiliaryComponents/LangSelect.vue'
 
 export default {
   components: {
-    LangSelect
+    LangSelect,
   },
   name: 'IntroSection',
-  setup () {
+  setup() {
     const options = ref([
       { name: 'УКР', value: 'ua', flag: require('../assets/ua-flag.png') },
       { name: 'ENG', value: 'en', flag: require('../assets/en-flag.png') },
+      { name: 'РУС', value: 'ru', flag: require('../assets/ru-flag.png') },
     ])
-    const selected = ref(
-      localStorage.getItem('lang') === 'ua'
-        ? options.value[0]
-        : localStorage.getItem('lang') === 'en'
-        ? options.value[1] : options.value[0]
-    )
+
+    const selected = ref(options.value[0]) // Значение по умолчанию
+
+    // Получаем сохраненный язык и обновляем selected
+    const savedLanguage = localStorage.getItem('lang')
+    switch (savedLanguage) {
+      case 'ua':
+        selected.value = options.value[0]
+        break
+      case 'en':
+        selected.value = options.value[1]
+        break
+      case 'ru':
+        selected.value = options.value[2]
+        break
+      default:
+        selected.value = options.value[0] // Установка значения по умолчанию, если в localStorage нет сохраненного языка
+    }
 
     function optionSelect(option) {
       selected.value = option
@@ -50,7 +63,7 @@ export default {
     return {
       options,
       selected,
-      optionSelect
+      optionSelect,
     }
   }
 }

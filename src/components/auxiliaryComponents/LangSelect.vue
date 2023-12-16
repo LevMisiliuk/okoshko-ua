@@ -1,35 +1,28 @@
 <template>
-  <div class="lang-select">
-    <div
-      class="lang-select__title"
-      @click="areOptionsVisible = !areOptionsVisible"
-    >
+  <div class="lang-select" @click="toggleOptionsVisibility">
+    <div class="lang-select__title">
       <div>
         {{ selected?.name ? selected?.name : selected }}
         <img class="lang-select__selected-flag" :src="selected?.flag" alt="" />
       </div>
-      <img
-        class="lang-select__dropdown-arrow"
-        src="../../assets/svg/dropdown-arrow.svg"
-        alt="dropdown arrow"
-      />
+      <img class="lang-select__dropdown-arrow" src="../../assets/svg/dropdown-arrow.svg" alt="dropdown arrow" />
     </div>
     <div v-if="areOptionsVisible" class="options">
-      <p
+      <div
         class="option"
         v-for="option in options"
         :key="option.value"
         @click="selectOption(option)"
       >
-        {{ option.name }}
-        <img class="option-img" :src="option.flag" alt="cuntry flag" />
-      </p>
+        <span>{{ option.name }}</span>
+        <img class="option-img" :src="option.flag" alt="country flag" />
+      </div>
     </div>
   </div>
 </template>
 
 <script>
-import { ref } from 'vue'
+import { onMounted, ref } from 'vue'
 import i18n from '@/i18n'
 import router from '../../router'
 
@@ -48,10 +41,11 @@ export default {
     }
   },
   emits: ['select'],
-  setup(_, context) {
+  setup(props, context) {
     const areOptionsVisible = ref(false)
 
     function setLocale(locale) {
+      console.log('locale', locale)
       localStorage.setItem('lang', locale)
       i18n.global.locale.value = locale
       router.push({
@@ -64,19 +58,38 @@ export default {
         localStorage.setItem('dark-calc', 'no')
         context.emit('select', option)
         setLocale(option.value)
-        areOptionsVisible.value = false
         return
       }
       context.emit('select', option)
       setLocale(option.value)
-      areOptionsVisible.value = false
       localStorage.setItem('dark-calc', 'yes')
     }
+
+    function toggleOptionsVisibility () {
+      areOptionsVisible.value = !areOptionsVisible.value;
+    }
+
+    onMounted(() => {
+      let initialLocale;
+
+      const savedLanguage = localStorage.getItem('lang')
+      if (savedLanguage) {
+        initialLocale = savedLanguage;
+      } else {
+        const browserLanguage = navigator.language.slice(0, 2);
+        initialLocale = ['ua', 'ru', 'en'].includes(browserLanguage) ? browserLanguage : 'en';
+        localStorage.setItem('lang', initialLocale);
+      }
+
+      const option = props.options.find(option => option.value === initialLocale);
+      if (option) selectOption(option);
+    })
 
     return {
       areOptionsVisible,
       selectOption,
-      setLocale
+      setLocale,
+      toggleOptionsVisibility
     }
   }
 }

@@ -10,12 +10,17 @@ import VueSmoothScroll from 'vue3-smooth-scroll'
 import VueGtag from "vue-gtag";
 
 router.beforeEach((to, from, next) => {
-  const lang = to.params.lang;
+  let lang = to.params.lang;
+  const supportedLocales = ['ua', 'en', 'ru'];
 
-  if (!['ua', 'en'].includes(lang)) {
-    const locale = localStorage.getItem('lang') || 'ua'
-    i18n.global.locale.value = locale
-    if (to.path === '/') return next(`/${locale}`)
+  if (!supportedLocales.includes(lang)) {
+    const browserLanguage = navigator.language.slice(0, 2); // Получаем язык браузера
+    // Устанавливаем язык на основе языка браузера или по умолчанию используем 'en'
+    lang = supportedLocales.includes(browserLanguage) ? browserLanguage : 'en';
+
+    const savedLocale = localStorage.getItem('lang') || lang;
+    i18n.global.locale.value = savedLocale;
+    if (to.path === '/') return next(`/${savedLocale}`);
   }
 
   if (i18n.global.locale.value !== lang) {
@@ -23,9 +28,9 @@ router.beforeEach((to, from, next) => {
   }
 
   return next();
-})
+});
 
-const app = createApp(App)
+const app = createApp(App);
 
 app
   .component('MqResponsive', Vue3Mq.MqResponsive)
@@ -38,9 +43,9 @@ app
   .use(i18n)
   .use(Toast)
   .use(VueSmoothScroll)
-  .mount('#app')
+  .mount('#app');
 
 // Options
 Vue3Mq.updateBreakpoints({
   preset: "bootstrap5"
-})
+});

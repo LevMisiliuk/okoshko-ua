@@ -16,7 +16,6 @@ export default {
     const loading = ref(true)
 
     onMounted(async () => {
-      // получаем параметры из URL
       const orderId = route.query.orderId
       const userId = route.query.userId
 
@@ -26,21 +25,6 @@ export default {
             `https://okoshko.ua/api/orders/${orderId}?userId=${userId}`
           )
           const style = `<style>
-          /*.active_svg, .glass-active, .corner_mark {fill: rgba(34, 34, 255, 0.5) !important;}
-          .glass {-moz-transition: all 0.1s linear;-webkit-transition: all 0.1s linear;transition: all 0.1s linear;fill: rgba(155, 204, 255, 0.2);}
-          .frame, .sash, .impost, .bead {-moz-transition: all 0.2s linear;-webkit-transition: all 0.2s linear;transition: all 0.2s linear;
-            fill: #f9f9f9;stroke: #363636;stroke-width: 2;}
-          .frame-icon, .sash-icon, .impost-icon, .bead-icon {fill: #ccc; stroke: #000; stroke-width: 4;}
-          .doorstep {fill: #4f4f4f;stroke: #4f4f4f;} .main-line {fill: #363636;}
-          .size-line { fill: none; stroke: #D2D2D2; stroke-width: 1;} .size-box { cursor: pointer; }
-          .size-rect, .size-rect-active { stroke: #6ed44a; stroke-width: 0.1875rem;fill: #fff;}
-          .size-rect-active {fill: #6ed44a;}
-          .size-value,
-          .size-value-edit, .size-value-active {font-size: 5.625rem; stroke: #D2D2D2; stroke-width: 1px;text-anchor: middle;alignment-baseline: middle;}
-          .size-value-edit {stroke: #6ed44a;fill: #6ed44a;}
-          .size-value-active {stroke: #fff; fill: #fff;}
-          .sash_mark {fill: none;stroke: #f98000;stroke-width: 2;}*/
-
           .frame {
             -moz-transition: all 0.2s linear;
             -webkit-transition: all 0.2s linear;
@@ -71,12 +55,10 @@ export default {
             fill: rgba(155, 204, 255, 0.2);
           }
 
-          / line 18, ../../dev/sass/parts/svg.scss /
           .glass-icon {
             fill: #94DEEE;
           }
 
-          / line 21, ../../dev/sass/parts/svg.scss /
           .active_svg, .frame-active, .glass-active, .corner_mark {
             fill: rgba(34, 34, 255, 0.5) !important;
           }
@@ -217,7 +199,7 @@ export default {
 
               .product-top {
                 min-height: 50px;
-                margin-top: 150px;
+                margin-top: 20px;
                 max-height: 50px;
               }
 
@@ -330,10 +312,35 @@ export default {
                 min-height: 180px;
               }
 
-          hr {
-            margin: 2px!important;
-            clear: both;
-          }
+              hr {
+                margin: 2px!important;
+                clear: both;
+              }
+
+
+            .col-md-1, .col-md-2, .col-md-3, .col-md-4, .col-md-5, .col-md-6, .col-md-7, .col-md-8, .col-md-9, .col-md-10, .col-md-11 {
+              color: #000;
+              box-sizing: border-box;
+              position: relative;
+              min-height: 1px;
+              padding-right: 5px;
+              padding-left: 5px;
+              float: left;
+              padding-top: 2px;
+              padding-bottom: 2px;
+            }
+
+            .col-md-7 {
+              width: 100%;
+              white-space: nowrap;
+              font-size: 12px;
+            }
+
+            .row {
+              display: flex;
+              flex-direction: row;
+              justify-content: space-between;
+            }
 
           .sum_letters{
             font-style: italic;
@@ -345,6 +352,25 @@ export default {
           }
           </style>`
           htmlData.value = style + response.data
+          loadExternalScript('https://okoshko.ua/jquery-1.11.2.min.js')
+          setTimeout(() => {
+            loadExternalScript('https://okoshko.ua/d3.min.js')
+          }, 200)
+          setTimeout(() => {
+            loadExternalScript('https://okoshko.ua/pdf.js')
+          }, 200)
+          const parser = new DOMParser()
+          const doc = parser.parseFromString(htmlData.value, 'text/html')
+
+          // Поиск и замена img
+          const imgTags = doc.querySelectorAll('img')
+          imgTags.forEach((imgTag) => {
+            if (imgTag.src.endsWith('logo.png')) {
+              imgTag.src = 'https://okoshko.ua/logo.png'
+              imgTag.style.width = '250px'
+            }
+          })
+          htmlData.value = doc.documentElement.outerHTML
         } catch (e) {
           console.log(e)
           htmlData.value = 'Ошибка при получении данных'
@@ -356,6 +382,13 @@ export default {
         loading.value = false
       }
     })
+
+    function loadExternalScript(src) {
+      const script = document.createElement('script')
+      script.src = src
+      script.async = true
+      document.head.appendChild(script)
+    }
 
     return { htmlData, loading }
   },

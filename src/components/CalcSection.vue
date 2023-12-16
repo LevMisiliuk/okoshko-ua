@@ -11,7 +11,7 @@
         height="100%"
         class="dark-calc"
         style="border: none; min-height: 90vh;"
-        src="https://okoshko.ua/dark-calc/#/"
+        src="https://okoshko.ua/simple-user/#/"
       ></iframe>
       <iframe
         v-if="!isDark()"
@@ -20,8 +20,8 @@
         id="calculator_frame"
         width="100%"
         height="100%"
-        style="border: none; min-height: 620px; border-radius: 30px;"
-        src="https://okoshko.ua/calculators/#/"
+        style="border: none; min-height: 90vh;"
+        src="https://okoshko.ua/pro-user/#/"
       ></iframe>
     </div>
     <div class="calc__button-position">
@@ -66,12 +66,12 @@ export default {
   mounted () {
     const controller = new ScrollMagic.Controller();
     new ScrollMagic.Scene({
-      triggerElement: '#my-element', // элемент, который запускает анимацию при прокрутке
-      duration: 1000, // продолжительность анимации (в пикселях прокрутки)
-      triggerHook: 0, // срабатывание триггера на высоте 25% вьюпорта
+      triggerElement: '#my-element',
+      duration: 1000,
+      triggerHook: 0
     })
-    .setPin('#my-element') // зафиксировать элемент на месте во время анимации
-    .addTo(controller);
+    .setPin('#my-element')
+    .addTo(controller)
   }
 }
 </script>
