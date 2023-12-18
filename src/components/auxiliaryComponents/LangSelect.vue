@@ -45,7 +45,6 @@ export default {
     const areOptionsVisible = ref(false)
 
     function setLocale(locale) {
-      console.log('locale', locale)
       localStorage.setItem('lang', locale)
       i18n.global.locale.value = locale
       router.push({
@@ -77,7 +76,7 @@ export default {
         initialLocale = savedLanguage;
       } else {
         const browserLanguage = navigator.language.slice(0, 2);
-        initialLocale = ['ua', 'ru', 'en'].includes(browserLanguage) ? browserLanguage : 'en';
+        initialLocale = ['uk', 'ru', 'en'].includes(browserLanguage) ? browserLanguage : 'en';
         localStorage.setItem('lang', initialLocale);
       }
 

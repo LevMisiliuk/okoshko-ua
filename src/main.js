@@ -11,7 +11,7 @@ import VueGtag from "vue-gtag";
 
 router.beforeEach((to, from, next) => {
   let lang = to.params.lang;
-  const supportedLocales = ['ua', 'en', 'ru'];
+  const supportedLocales = ['uk', 'en', 'ru'];
 
   if (!supportedLocales.includes(lang)) {
     const browserLanguage = navigator.language.slice(0, 2); // Получаем язык браузера

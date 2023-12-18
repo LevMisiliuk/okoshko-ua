@@ -33,7 +33,7 @@ export default {
   name: 'IntroSection',
   setup() {
     const options = ref([
-      { name: 'УКР', value: 'ua', flag: require('../assets/ua-flag.png') },
+      { name: 'УКР', value: 'uk', flag: require('../assets/ua-flag.png') },
       { name: 'ENG', value: 'en', flag: require('../assets/en-flag.png') },
       { name: 'РУС', value: 'ru', flag: require('../assets/ru-flag.png') },
     ])
@@ -43,7 +43,7 @@ export default {
     // Получаем сохраненный язык и обновляем selected
     const savedLanguage = localStorage.getItem('lang')
     switch (savedLanguage) {
-      case 'ua':
+      case 'uk':
         selected.value = options.value[0]
         break
       case 'en':

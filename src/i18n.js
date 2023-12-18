@@ -20,8 +20,8 @@ function loadLocaleMessages() {
 
 export default createI18n({
   legacy: false,
-  locale: 'ua',
+  locale: 'uk',
   globalInjection: true,
-  fallbackLocale: 'ua',
+  fallbackLocale: 'uk',
   messages: loadLocaleMessages()
 })
